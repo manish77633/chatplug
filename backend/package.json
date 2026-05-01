@@ -1,0 +1,44 @@
+{
+  "name": "chatplug-backend",
+  "version": "1.0.0",
+  "description": "ChatPlug - AI Chatbot Embeddable Platform Backend",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "worker": "node jobs/worker.js"
+  },
+  "dependencies": {
+    "@bull-board/api": "^5.14.0",
+    "@bull-board/express": "^5.14.0",
+    "@google/generative-ai": "^0.24.1",
+    "@huggingface/inference": "^2.8.1",
+    "@langchain/community": "^0.2.33",
+    "@langchain/google-genai": "^2.1.29",
+    "@langchain/openai": "^0.1.0",
+    "@pinecone-database/pinecone": "^2.2.0",
+    "axios": "^1.6.0",
+    "bcryptjs": "^2.4.3",
+    "bullmq": "^5.7.0",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-rate-limit": "^7.2.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.2",
+    "langchain": "^0.2.0",
+    "mongoose": "^8.3.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.47.0",
+    "pdf-parse": "^1.1.1",
+    "puppeteer": "^22.8.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

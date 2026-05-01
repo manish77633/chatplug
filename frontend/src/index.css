@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-void text-text font-display;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border/50 rounded-lg hover:bg-border;
+  }
+
+  ::selection {
+    @apply bg-acid/30 text-text;
+  }
+}
+
+@layer components {
+  /* Cards */
+  .card {
+    @apply bg-white/70 border border-border/60 rounded-3xl backdrop-blur-md transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-acid/30 hover:bg-white hover:shadow-2xl hover:shadow-acid/10 hover:-translate-y-1;
+  }
+
+  /* Buttons - These are backups, components should use inline Tailwind */
+  .btn-primary {
+    @apply px-6 py-2.5 rounded-xl font-semibold text-white bg-gradient-to-r from-acid to-violet hover:shadow-lg hover:shadow-acid/20 hover:opacity-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2.5 rounded-xl font-semibold text-text bg-white border border-border hover:border-acid/30 hover:bg-surface transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply px-6 py-2.5 rounded-xl font-medium text-dim hover:text-acid hover:bg-acid/10 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-danger {
+    @apply px-6 py-2.5 rounded-xl font-semibold text-white bg-danger/80 hover:bg-danger transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 inline-flex items-center justify-center gap-2;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 bg-white border border-border/80 rounded-xl text-text placeholder:text-dim/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-acid/20 focus:border-acid/50 hover:border-border;
+  }
+
+  .input-error {
+    @apply border-danger focus:ring-danger/20 focus:border-danger;
+  }
+
+  /* Badges */
+  .badge {
+    @apply text-xs font-semibold px-3 py-1.5 rounded-full inline-flex items-center gap-2;
+  }
+
+  .badge-primary {
+    @apply bg-acid/10 border border-acid/20 text-acid;
+  }
+
+  .badge-secondary {
+    @apply bg-surface border border-border text-dim;
+  }
+
+  .badge-success {
+    @apply bg-success/10 border border-success/20 text-success;
+  }
+
+  .badge-danger {
+    @apply bg-danger/10 border border-danger/20 text-danger;
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    @apply py-20 md:py-32;
+  }
+
+  /* Container */
+  .container-md {
+    @apply max-w-6xl mx-auto px-4 sm:px-6;
+  }
+
+  .container-sm {
+    @apply max-w-2xl mx-auto px-4 sm:px-6;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: 
+      linear-gradient(to right, #80808012 1px, transparent 1px),
+      linear-gradient(to bottom, #80808012 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-b from-text to-muted;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
